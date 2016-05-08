@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="ceApp">
+	<head>
+		<base href="/">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Caixa Eletrônico</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/efeitos.css">
+		<script src="js/lib/angular.min.js"></script>
+        <script src="js/lib/angular-animate.min.js"></script>
+        <script src="js/lib/angular-route.min.js"></script>
+        <script src="js/lib/angular-resource.min.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/controllers/caixa-eletronico.js"></script>
+        <script src="js/controllers/saque.js"></script>
+		<script src="js/controllers/usuario.js"></script>
+		<script src="js/directives/minhas-diretivas.js"></script>
+        <script src="js/services/meus-servicos.js"></script>
+        <script src="js/services/caixa-eletronico.service.js"></script>
+        <script src="js/services/saque.service.js"></script>
+        <script src="js/services/usuario.service.js"></script>
+	</head>
+	<body>
+		<div class="container">
+
+			<ng-view></ng-view>
+
+		</div> <!-- fim container -->        
+	</body>
+</html>

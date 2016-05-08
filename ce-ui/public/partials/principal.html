@@ -1,0 +1,84 @@
+<div class="jumbotron">
+	<h1 class="text-center">Caixa Eletrônico</h1>
+</div>
+
+<p ng-show="mensagem.length" class="alert alert-info">
+	{{mensagem}}
+</p>
+
+<div class="container">
+<div class="col-md-6">
+<form novalidate name="formulario" class="row" ng-submit="submeter()">
+    <div class="form-group">
+      <label>Usuário</label>
+      <select name="usuario" ng-model="usuario" class="form-control" 
+          required  
+          ng-options="usuario as (usuario | uppercase) for usuario in usuarios">
+        <option value="">Escolha um usuário</option>
+      </select>
+      <span ng-show="formulario.$submitted && formulario.usuario.$error.required" 
+        class="form-control alert-danger">
+       Usuário obrigatório
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label>Caixa</label>
+      <select name="caixa" ng-model="caixa" class="form-control" 
+          required
+          ng-options="caixa as (caixa | uppercase) for caixa in caixas">
+        <option value="">Escolha um caixa</option>
+      </select>
+      <span ng-show="formulario.$submitted && formulario.caixa.$error.required" 
+        class="form-control alert-danger">
+        Caixa obrigatório
+      </span>
+    </div>
+
+     <div class="form-group">
+      <label>Valor do Saque</label>
+      <input name="saque" class="form-control" ng-model="saque.valor" required>  
+
+      <span ng-show = "formulario.$submitted && formulario.saque.$error.required"
+        class="form-control alert-danger">
+        Valor obrigatório
+      </span>
+      <span ng-show="formulario.$submitted && formulario.saque.$error.maxlength" 
+        class="form-control alert-danger">
+        No máximo 20 caracteres!
+      </span>
+    </div>
+
+    <button type="submit" class="btn btn-primary" ng-disabled="formulario.$invalid">
+      Salvar
+    </button>
+    <a href="/" meu-focus class="btn btn-primary">Voltar</a>
+    </button>
+    <a href="/" meu-focus class="btn btn-primary" ng-click=inicializar()>Limpar</a>
+    <hr>
+  
+</form>
+</div>
+<div class="col-md-4" ng-show=saque.notas.length>
+<label>Notas Sacadas</label>
+ <div class="form-group">
+      <label>100</label>
+      <input name="nota_cem" class="form-control" ng-model="nota_cem.quantidade" required>
+      <label>50</label>
+      <input name="nota_cinquenta" class="form-control" ng-model="nota_cinquenta.quantidade" required>
+      <label>20</label>
+      <input name="nota_vinte" class="form-control" ng-model="nota_vinte.quantidade" required>
+      <label>10</label>
+      <input name="nota_dez" class="form-control" ng-model="nota_dez.quantidade" required> 
+</div> 
+
+</div>
+</div>
+<div class=col-md-8>
+  <ul>
+     <li><a href="/usuario">Cadastrar Usuário</a></li>
+    <li><a href="/caixa">Cadastrar Caixa</a></li>
+  </ul>
+</div>
+
+
