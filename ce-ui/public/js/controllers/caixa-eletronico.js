@@ -70,7 +70,7 @@
                     });
             };
 
-    		function calcularsSaldo() {
+    		function calcularSaldo() {
     			var notasCem 		= $scope.nota_cem.quantidade * $scope.nota_cem.nota;
     			var notasCinquenta 	= $scope.nota_cinquenta.quantidade * $scope.nota_cinquenta.nota;
 				var notasCinquenta 	= $scope.nota_cinquenta.quantidade * $scope.nota_cinquenta.nota;
